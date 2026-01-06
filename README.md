@@ -8,7 +8,25 @@ Eine statische Website für mehr Transparenz und Bürgerbeteiligung in Villach. 
 - **Betreiber:** Gernot Oberrauner
 - **Hosting:** Hosttech.at
 - **Technologie:** Statische HTML/CSS/JS Website (keine Frameworks)
-- **Status:** In Entwicklung (Feature 0001 - Grundgerüst implementiert)
+- **Status:** Sprint 2 - Blog-System implementiert ✅
+
+## ⚠️ Wichtig: Lokale Entwicklung
+
+**Die Website funktioniert NICHT über `file://` Protocol!**
+
+Sie müssen einen lokalen HTTP-Server verwenden, um die Seite lokal zu testen:
+
+```powershell
+# Einfachste Methode: PowerShell-Skript
+.\server.ps1
+
+# Oder manuell mit Python:
+python -m http.server 8000
+```
+
+Dann öffnen: `http://localhost:8000`
+
+📖 **Ausführliche Anleitung:** Siehe [LOKALE_ENTWICKLUNG.md](LOKALE_ENTWICKLUNG.md)
 
 ## 🎯 Projektziele
 
@@ -22,8 +40,14 @@ Eine statische Website für mehr Transparenz und Bürgerbeteiligung in Villach. 
 ```
 /
 ├── index.html                          # Landing Page / Startseite
+├── server.ps1                          # ⭐ Server-Start-Skript (NEU!)
+├── LOKALE_ENTWICKLUNG.md               # ⭐ Anleitung lokaler Server (NEU!)
+├── BLOG_README.md                      # ⭐ Blog-System Dokumentation (NEU!)
 ├── pages/
 │   ├── about.html                      # Über das Projekt
+│   ├── blog.html                       # ⭐ Blog-Übersichtsseite (NEU!)
+│   ├── blog/
+│   │   └── detail.html                 # ⭐ Blog-Detailseite (NEU!)
 │   └── legal/
 │       ├── impressum.html              # Impressum (§ 5 ECG)
 │       ├── datenschutz.html            # Datenschutzerklärung (DSGVO)
@@ -33,17 +57,32 @@ Eine statische Website für mehr Transparenz und Bürgerbeteiligung in Villach. 
 │   │   ├── base.css                    # CSS Reset, Variablen, Typografie
 │   │   ├── layout.css                  # Grid, Header, Footer, Sections
 │   │   ├── components.css              # Buttons, Cards, Navigation
-│   │   └── themes.css                  # Dark Mode (vorbereitet)
+│   │   ├── themes.css                  # Dark Mode (vorbereitet)
+│   │   └── blog.css                    # ⭐ Blog-Styles (NEU!)
 │   ├── js/
 │   │   ├── main.js                     # Mobile Navigation, Init
+│   │   ├── posts/                      # ⭐ Blog-Module (NEU!)
+│   │   │   ├── posts.js                #   Hauptlogik
+│   │   │   ├── sources.js              #   Datenladen
+│   │   │   └── markdown.js             #   Markdown-Parser
+│   │   ├── vendor/                     # ⭐ Externe Libraries (NEU!)
+│   │   │   └── marked.min.js           #   Markdown-Parser
 │   │   └── utils/                      # Utility-Funktionen
+│   ├── documents/                      # ⭐ PDF-Downloads (NEU!)
+│   │   └── posts/                      #   Beitrags-PDFs
 │   ├── img/                            # Bilder und Grafiken
+│   │   └── posts/                      # ⭐ Blog-Bilder (NEU!)
 │   └── icons/                          # Icons (SVG)
-├── content/
-│   └── posts/                          # Blog-Posts (zukünftig)
+├── content/                            # ⭐ Content-Dateien (NEU!)
+│   ├── posts.json                      #   Beitrags-Index
+│   └── posts/                          #   Markdown-Dateien
+│       ├── 2026-01-06-ifg-anfrage-stadtrat.md
+│       ├── 2026-01-08-ifg-antwort-stadtrat.md
+│       └── 2026-01-10-buergeranfrage-budgetverteilung.md
 ├── requirements/
 │   ├── Anforderung.md                  # Projektanforderungen
-│   └── feature-0001-grundgeruest-website.md  # Feature-Dokumentation
+│   ├── feature-0001-grundgeruest-website.md  # Feature Sprint 1
+│   └── feature-0002-blog-beitragsystem.md    # ⭐ Feature Sprint 2 (NEU!)
 ├── Anforderung.md                      # Haupt-Anforderungsdokument
 └── README.md                           # Diese Datei
 ```
@@ -52,11 +91,12 @@ Eine statische Website für mehr Transparenz und Bürgerbeteiligung in Villach. 
 
 ### Voraussetzungen
 
-- Kein Build-Prozess erforderlich
-- Funktioniert direkt im Browser (statisches HTML/CSS/JS)
+- **Kein Build-Prozess erforderlich**
+- **Lokaler HTTP-Server** für Tests (siehe unten)
 - Moderner Webbrowser (Chrome, Firefox, Safari, Edge)
+- Python 3 empfohlen (meist vorinstalliert)
 
-### Lokale Entwicklung
+### Schnellstart
 
 1. **Repository klonen:**
    ```bash
@@ -64,22 +104,40 @@ Eine statische Website für mehr Transparenz und Bürgerbeteiligung in Villach. 
    cd transparentesVillach
    ```
 
-2. **Lokalen Webserver starten:**
+2. **Server starten:**
    
-   Mit Python 3:
+   **Einfachste Methode (PowerShell):**
+   ```powershell
+   .\server.ps1
+   ```
+   
+   **Oder manuell mit Python:**
    ```bash
    python -m http.server 8000
    ```
-   
-   Mit PHP:
-   ```bash
-   php -S localhost:8000
+
+3. **Browser öffnen:**
    ```
-   
-   Mit Node.js (http-server):
-   ```bash
-   npx http-server -p 8000
+   http://localhost:8000
    ```
+
+### ⚠️ Wichtig: Nicht über file:// öffnen!
+
+❌ **Funktioniert NICHT:**
+```
+file:///C:/Uni%20Programmieren/.../index.html
+```
+
+✅ **Funktioniert:**
+```
+http://localhost:8000/index.html
+```
+
+**Grund:** JavaScript `fetch()` und ES6 Module funktionieren nicht mit `file://` Protocol.
+
+📖 **Detaillierte Anleitung:** [LOKALE_ENTWICKLUNG.md](LOKALE_ENTWICKLUNG.md)
+
+### Alternative Server-Optionen
 
 3. **Im Browser öffnen:**
    ```

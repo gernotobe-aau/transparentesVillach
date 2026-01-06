@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Über das Projekt Transparentes Villach - Ziele, Hintergründe und Informationen zur Initiative">
+    <meta name="description" content="Blog - Transparentes Villach: Aktuelle Beiträge zu Transparenz, Informationsfreiheitsgesetz und Anfragen an die Stadt Villach.">
+    <meta name="keywords" content="Blog, Beiträge, Transparenz, Villach, IFG, Informationsfreiheitsgesetz, Anfragen">
+    <meta name="author" content="Gernot Oberrauner">
     
-    <title>Über das Projekt - Transparentes Villach</title>
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog - Transparentes Villach">
+    <meta property="og:description" content="Aktuelle Beiträge zu Transparenz und Informationsfreiheit in Villach.">
+    <meta property="og:url" content="https://transparentesvillach.at/pages/blog.html">
+    
+    <title>Blog - Transparentes Villach</title>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/themes.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
 </head>
 <body>
-    <!-- Skip Link -->
+    <!-- Skip Link für Barrierefreiheit -->
     <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
     
     <!-- Header & Navigation -->
@@ -37,10 +46,13 @@
                         <a href="../index.html" class="nav-link">Startseite</a>
                     </li>
                     <li class="nav-item">
-                        <a href="about.html" class="nav-link active" aria-current="page">Über das Projekt</a>
+                        <a href="about.html" class="nav-link">
+                            Über das Projekt
+                            <span class="badge">Demnächst</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="blog.html" class="nav-link active" aria-current="page">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -55,72 +67,25 @@
     
     <!-- Main Content -->
     <main id="main" class="main-content">
-        <article class="section">
-            <div class="container container-narrow">
-                <h1>Über das Projekt</h1>
-                <p class="text-large text-muted">
-                    Transparentes Villach - Eine Initiative für mehr Offenheit in der Kommunalpolitik
-                </p>
-                
-                <hr class="divider">
-                
-                <div class="alert alert-info">
-                    <p class="alert-title">Diese Seite befindet sich im Aufbau</p>
-                    <p style="margin: 0;">
-                        Der vollständige Inhalt dieser Seite wird in einer zukünftigen Version ergänzt. 
-                        Grundlegende Informationen finden Sie bereits auf der <a href="../index.html">Startseite</a>.
+        <!-- Blog Section -->
+        <section class="blog-section">
+            <div class="container">
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-header__title">Blog & Beiträge</h1>
+                    <p class="blog-header__description">
+                        Hier finden Sie alle Beiträge zu Transparenz, Informationsfreiheitsgesetz und 
+                        Anfragen an die Stadt Villach. Erfahren Sie mehr über unsere Arbeit für mehr 
+                        Offenheit und Bürgerbeteiligung.
                     </p>
+                </header>
+                
+                <!-- Blog Grid (wird dynamisch gefüllt) -->
+                <div id="blog-grid" class="blog-grid">
+                    <!-- Beitrags-Karten werden hier von JavaScript eingefügt -->
                 </div>
-                
-                <section class="mb-xl mt-xl">
-                    <h2>Was ist Transparentes Villach?</h2>
-                    <p>
-                        Transparentes Villach ist eine private Initiative, die sich für mehr Transparenz und 
-                        Nachvollziehbarkeit in der Kommunalpolitik der Stadt Villach einsetzt. Das Projekt 
-                        dokumentiert Anfragen an die Stadt Villach im Rahmen des Informationsfreiheitsgesetzes 
-                        und stellt die erhaltenen Antworten der Öffentlichkeit zur Verfügung.
-                    </p>
-                </section>
-                
-                <section class="mb-xl">
-                    <h2>Ziele des Projekts</h2>
-                    <p>
-                        Die Ziele von Transparentes Villach sind:
-                    </p>
-                    <ul>
-                        <li>Aufklärung über das Informationsfreiheitsgesetz und die Rechte der Bürgerinnen und Bürger</li>
-                        <li>Dokumentation von Anfragen und Antworten zur Schaffung von Transparenz</li>
-                        <li>Förderung der demokratischen Teilhabe und des Bürgerdialogs</li>
-                        <li>Nachvollziehbarkeit kommunalpolitischer Entscheidungen</li>
-                    </ul>
-                </section>
-                
-                <section class="mb-xl">
-                    <h2>Hintergrund</h2>
-                    <p>
-                        Das Informationsfreiheitsgesetz gibt allen Bürgerinnen und Bürgern das Recht, 
-                        Zugang zu Informationen der öffentlichen Verwaltung zu erhalten. Diese Plattform 
-                        möchte dazu beitragen, dieses Recht bekannter zu machen und seine Nutzung zu fördern.
-                    </p>
-                </section>
-                
-                <section class="mb-xl">
-                    <h2>Kontakt</h2>
-                    <p>
-                        Weitere Informationen, Fragen oder Anregungen? Kontaktieren Sie uns:
-                    </p>
-                    <p>
-                        E-Mail: <a href="mailto:kontakt@transparentesvillach.at">kontakt@transparentesvillach.at</a>
-                    </p>
-                </section>
-                
-                <hr class="divider">
-                
-                <p class="text-small text-muted">
-                    Diese Seite wird kontinuierlich erweitert und aktualisiert.
-                </p>
             </div>
-        </article>
+        </section>
     </main>
     
     <!-- Footer -->
@@ -130,7 +95,8 @@
                 <div class="footer-section">
                     <h3>Transparentes Villach</h3>
                     <p>
-                        Eine Initiative für mehr Transparenz und Bürgerbeteiligung in Villach.
+                        Eine Initiative für mehr Transparenz und Bürgerbeteiligung in Villach. 
+                        Informationen zum Informationsfreiheitsgesetz und dokumentierte Anfragen an die Stadt.
                     </p>
                 </div>
                 
@@ -139,6 +105,7 @@
                     <ul class="footer-nav">
                         <li><a href="../index.html">Startseite</a></li>
                         <li><a href="about.html">Über das Projekt</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="mailto:kontakt@transparentesvillach.at">Kontakt</a></li>
                     </ul>
                 </div>
@@ -173,6 +140,9 @@
     </footer>
     
     <!-- JavaScript -->
+    <!-- marked.js für Markdown-Rendering -->
+    <script src="../assets/js/vendor/marked.min.js"></script>
     <script src="../assets/js/main.js" type="module"></script>
+    <script src="../assets/js/posts/posts.js" type="module"></script>
 </body>
 </html>

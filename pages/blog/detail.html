@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beitrag - Transparentes Villach">
+    <meta name="author" content="Gernot Oberrauner">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Beitrag - Transparentes Villach">
+    <meta property="og:url" content="https://transparentesvillach.at">
+    
+    <title>Beitrag - Transparentes Villach</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/themes.css">
+    <link rel="stylesheet" href="../../assets/css/blog.css">
+</head>
+<body>
+    <!-- Skip Link für Barrierefreiheit -->
+    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+    
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="../../index.html" class="site-logo">
+                <span class="logo-accent">Transparentes</span> Villach
+            </a>
+            
+            <button class="nav-toggle" 
+                    aria-expanded="false" 
+                    aria-controls="main-navigation"
+                    aria-label="Menü öffnen">
+                <span class="hamburger-icon"></span>
+            </button>
+            
+            <nav class="main-nav" id="main-navigation" aria-label="Hauptnavigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../../index.html" class="nav-link">Startseite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../about.html" class="nav-link">
+                            Über das Projekt
+                            <span class="badge">Demnächst</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../blog.html" class="nav-link active" aria-current="page">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Kontakt
+                            <span class="badge">Demnächst</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main" class="main-content">
+        <!-- Post Detail Container (wird dynamisch gefüllt) -->
+        <div id="post-detail">
+            <!-- Beitrags-Inhalt wird hier von JavaScript eingefügt -->
+            <p class="loading-message">Beitrag wird geladen...</p>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Transparentes Villach</h3>
+                    <p>
+                        Eine Initiative für mehr Transparenz und Bürgerbeteiligung in Villach. 
+                        Informationen zum Informationsfreiheitsgesetz und dokumentierte Anfragen an die Stadt.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul class="footer-nav">
+                        <li><a href="../../index.html">Startseite</a></li>
+                        <li><a href="../about.html">Über das Projekt</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="mailto:kontakt@transparentesvillach.at">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Rechtliches</h3>
+                    <ul class="footer-nav">
+                        <li><a href="../legal/impressum.html">Impressum</a></li>
+                        <li><a href="../legal/datenschutz.html">Datenschutzerklärung</a></li>
+                        <li><a href="../legal/barrierefreiheit.html">Barrierefreiheit</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p>
+                        E-Mail: <a href="mailto:kontakt@transparentesvillach.at">kontakt@transparentesvillach.at</a><br>
+                        Betreiber: Gernot Oberrauner
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2026 Transparentes Villach - Gernot Oberrauner | 
+                    <a href="../legal/impressum.html">Impressum</a> | 
+                    <a href="../legal/datenschutz.html">Datenschutz</a> | 
+                    <a href="../legal/barrierefreiheit.html">Barrierefreiheit</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <!-- marked.js für Markdown-Rendering -->
+    <script src="../../assets/js/vendor/marked.min.js"></script>
+    <script src="../../assets/js/main.js" type="module"></script>
+    <script src="../../assets/js/posts/posts.js" type="module"></script>
+</body>
+</html>

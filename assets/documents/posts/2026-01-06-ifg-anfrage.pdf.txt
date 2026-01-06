@@ -1,0 +1,9 @@
+PDF Placeholder
+===============
+
+Dies ist ein Platzhalter für: IFG-Anfrage an die Stadt Villach
+Datum: 06.01.2026
+
+In einer echten Implementation würde hier das PDF-Dokument liegen.
+
+Für Testzwecke erstellt.
