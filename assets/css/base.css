@@ -69,6 +69,9 @@ h6 {
   --color-secondary: #003057; /* Dunkles Blau */
   --color-secondary-light: #004B87;
   
+  --color-footer-bg: #F5E6C3; /* Helles Gelb/Beige wie Hero */
+  --color-footer-text: #2A2A2A; /* Dunkler Text für Kontrast */
+  
   /* Graustufen */
   --color-text: #1A1A1A;
   --color-text-light: #4A4A4A;
