@@ -130,6 +130,22 @@
   transform: translateY(-2px);
 }
 
+/* Card mit Flexbox für Button unten */
+.card-with-action {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-with-action .card-content {
+  flex-grow: 1;
+}
+
+.card-with-action .card-action {
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+}
+
 .card-title {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
@@ -676,7 +692,6 @@
 /* Contact Form Specific Styles */
 .contact-intro {
   margin-bottom: var(--spacing-xl);
-  text-align: center;
 }
 
 .contact-intro h2 {
@@ -684,9 +699,11 @@
 }
 
 .contact-intro p {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-intro p:last-child {
+  margin-bottom: 0;
 }
 
 .contact-alternative {
@@ -695,12 +712,19 @@
   background-color: var(--color-bg-secondary);
   border-radius: var(--border-radius-lg);
   border: var(--border-width) solid var(--color-border-light);
-  text-align: center;
 }
 
 .contact-alternative h3 {
   margin-bottom: var(--spacing-md);
   color: var(--color-text);
+}
+
+.contact-alternative p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-alternative p:last-child {
+  margin-bottom: 0;
 }
 
 .email-link {

@@ -18,17 +18,19 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // =============================================================================
 
 /**
- * Validiert den Namen
+ * Validiert den Namen (OPTIONAL)
  * @param {string} value - Name Wert
  * @returns {Object} - {valid: boolean, message: string}
  */
 function validateName(value) {
   const trimmedValue = value.trim();
   
+  // Name ist optional - leeres Feld ist OK
   if (trimmedValue.length === 0) {
-    return { valid: false, message: 'Bitte geben Sie Ihren Namen ein.' };
+    return { valid: true, message: '' };
   }
   
+  // Wenn Name eingegeben wurde, mindestens 2 Zeichen
   if (trimmedValue.length < MIN_NAME_LENGTH) {
     return { valid: false, message: `Der Name muss mindestens ${MIN_NAME_LENGTH} Zeichen lang sein.` };
   }
@@ -37,17 +39,19 @@ function validateName(value) {
 }
 
 /**
- * Validiert die E-Mail-Adresse
+ * Validiert die E-Mail-Adresse (OPTIONAL)
  * @param {string} value - E-Mail Wert
  * @returns {Object} - {valid: boolean, message: string}
  */
 function validateEmail(value) {
   const trimmedValue = value.trim();
   
+  // E-Mail ist optional - leeres Feld ist OK
   if (trimmedValue.length === 0) {
-    return { valid: false, message: 'Bitte geben Sie Ihre E-Mail-Adresse ein.' };
+    return { valid: true, message: '' };
   }
   
+  // Wenn E-Mail eingegeben wurde, muss sie gültig sein
   if (!EMAIL_PATTERN.test(trimmedValue)) {
     return { valid: false, message: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.' };
   }
@@ -81,7 +85,7 @@ function validateMessage(value) {
  */
 function validateConsent(checked) {
   if (!checked) {
-    return { valid: false, message: 'Bitte stimmen Sie der Datenschutzerklärung zu.' };
+    return { valid: false, message: 'Bitte bestätigen Sie, dass Sie die Datenschutzerklärung zur Kenntnis genommen haben.' };
   }
   
   return { valid: true, message: '' };
@@ -181,18 +185,14 @@ function updateSubmitButton() {
   const submitBtn = document.getElementById('submitBtn');
   const form = document.getElementById(FORM_ID);
   
-  const nameField = document.getElementById('name');
-  const emailField = document.getElementById('email');
   const messageField = document.getElementById('message');
   const consentField = document.getElementById('consent');
   
-  // Prüft ob alle Pflichtfelder ausgefüllt sind (einfache Prüfung)
-  const nameOk = nameField.value.trim().length >= MIN_NAME_LENGTH;
-  const emailOk = emailField.value.trim().length > 0;
+  // Nur Nachricht und Consent sind Pflicht
   const messageOk = messageField.value.trim().length >= 10;
   const consentOk = consentField.checked;
   
-  const allFieldsValid = nameOk && emailOk && messageOk && consentOk;
+  const allFieldsValid = messageOk && consentOk;
   
   submitBtn.disabled = !allFieldsValid;
 }
@@ -207,8 +207,8 @@ function showSuccessMessage() {
     <div class="alert alert-success" role="alert" tabindex="-1" id="successAlert">
       <h3>✓ Nachricht erfolgreich gesendet!</h3>
       <p>
-        Vielen Dank für Ihre Nachricht. Wir haben Ihre Anfrage erhalten und werden 
-        uns so schnell wie möglich bei Ihnen melden.
+        Vielen Dank für Ihre Nachricht. Ich habe Ihre Anfrage erhalten und werde 
+        mich so schnell wie möglich damit befassen.
       </p>
     </div>
   `;

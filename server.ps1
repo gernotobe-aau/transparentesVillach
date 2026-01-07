@@ -18,11 +18,11 @@ Write-Host ""
 
 # Starte Server (prüfe welcher verfügbar ist)
 if (Get-Command python -ErrorAction SilentlyContinue) {
-    Write-Host "Starte Python HTTP-Server..." -ForegroundColor Green
-    python -m http.server 8000
+    Write-Host "Starte Python HTTP-Server mit korrekten MIME-Types..." -ForegroundColor Green
+    python server.py
 } elseif (Get-Command python3 -ErrorAction SilentlyContinue) {
-    Write-Host "Starte Python 3 HTTP-Server..." -ForegroundColor Green
-    python3 -m http.server 8000
+    Write-Host "Starte Python 3 HTTP-Server mit korrekten MIME-Types..." -ForegroundColor Green
+    python3 server.py
 } elseif (Get-Command php -ErrorAction SilentlyContinue) {
     Write-Host "Starte PHP Built-in Server..." -ForegroundColor Green
     php -S localhost:8000

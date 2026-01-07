@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kontaktformular - Transparentes Villach. Senden Sie uns Ihre Fragen, Hinweise oder Anliegen zur Transparenz in der Stadt Villach.">
-    <meta name="keywords" content="Kontakt, Transparenz, Villach, Kontaktformular, Fragen, Hinweise">
+    <meta name="description" content="Anfragen & Hinweise - Transparentes Villach. Senden Sie uns anonym Ihre Fragen oder lassen Sie IFG-Anfragen für sich einreichen.">
+    <meta name="keywords" content="Anfragen, Hinweise, Transparenz, Villach, IFG, Informationsfreiheitsgesetz, anonym">
     <meta name="author" content="Gernot Oberrauner">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Kontakt - Transparentes Villach">
-    <meta property="og:description" content="Kontaktieren Sie uns bei Fragen oder Anliegen zur Transparenz in Villach.">
+    <meta property="og:title" content="Anfragen & Hinweise - Transparentes Villach">
+    <meta property="og:description" content="Senden Sie uns anonym Ihre Fragen oder lassen Sie IFG-Anfragen für sich einreichen.">
     <meta property="og:url" content="https://transparentesvillach.at/pages/kontakt.html">
     
-    <title>Kontakt - Transparentes Villach</title>
+    <title>Anfragen & Hinweise - Transparentes Villach</title>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../assets/css/base.css">
@@ -48,10 +48,10 @@
                         <a href="blog.html" class="nav-link">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a href="about.html" class="nav-link">Über das Projekt</a>
+                        <a href="kontakt.html" class="nav-link active" aria-current="page">Anfragen & Hinweise</a>
                     </li>
                     <li class="nav-item">
-                        <a href="kontakt.html" class="nav-link active" aria-current="page">Kontakt</a>
+                        <a href="about.html" class="nav-link">Über das Projekt</a>
                     </li>
                 </ul>
             </nav>
@@ -63,10 +63,10 @@
         <!-- Hero Section -->
         <section class="hero-section hero-small">
             <div class="container">
-                <h1>Kontakt</h1>
+                <h1>Anfragen & Hinweise</h1>
                 <p class="hero-subtitle">
-                    Haben Sie Fragen, Hinweise oder Anliegen zur Transparenz in Villach? 
-                    Wir freuen uns auf Ihre Nachricht!
+                    Sie haben Fragen zur Transparenz in Villach? Möchten Sie eine IFG-Anfrage stellen, 
+                    aber nicht selbst mit Ihrem Namen auftreten? Ich helfe gerne!
                 </p>
             </div>
         </section>
@@ -75,13 +75,19 @@
         <section class="section">
             <div class="container container-narrow">
                 <div class="contact-intro">
-                    <h2>Schreiben Sie uns</h2>
+                    <h2>Ihre Nachricht an mich</h2>
                     <p>
-                        Nutzen Sie das untenstehende Formular, um uns Ihre Nachricht zu senden. 
-                        Wir werden uns so schnell wie möglich bei Ihnen melden.
+                        <strong>Wichtig:</strong> Sie können mir <strong>komplett anonym</strong> schreiben! 
+                        Name und E-Mail-Adresse sind optional. Wenn Sie keine E-Mail-Adresse angeben, 
+                        kann ich Ihnen allerdings nicht antworten.
+                    </p>
+                    <p>
+                        <strong>IFG-Anfragen für Sie:</strong> Nicht jeder möchte mit seinem Namen eine 
+                        Anfrage an die Stadt Villach stellen. Ich reiche gerne Anfragen für Sie ein – 
+                        anonym für Sie, mit meinem Namen. Schreiben Sie mir einfach, was Sie wissen möchten!
                     </p>
                     <p class="text-small text-muted">
-                        <strong>Hinweis:</strong> Alle mit einem Sternchen (*) gekennzeichneten Felder sind Pflichtfelder.
+                        <strong>Hinweis:</strong> Nur die Nachricht ist verpflichtend. Alle anderen Felder sind optional.
                     </p>
                 </div>
                 
@@ -94,7 +100,7 @@
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                     
                     <!-- Web3Forms Access Key (wird später ersetzt) -->
-                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    <input type="hidden" name="access_key" value="08a06518-d386-4ec4-afa2-edfc7023db9b">
                     
                     <!-- Web3Forms: Weitere Konfiguration -->
                     <input type="hidden" name="subject" value="Neue Kontaktanfrage von transparentesvillach.at">
@@ -103,38 +109,34 @@
                     <!-- Name -->
                     <div class="form-group">
                         <label for="name" class="form-label">
-                            Name <span class="required" aria-label="Pflichtfeld">*</span>
+                            Name <span class="optional">(optional - für anonyme Anfragen leer lassen)</span>
                         </label>
                         <input 
                             type="text" 
                             id="name" 
                             name="name" 
                             class="form-input"
-                            required
-                            aria-required="true"
                             aria-describedby="name-error"
                             autocomplete="name"
                             maxlength="100"
-                            placeholder="Ihr vollständiger Name">
+                            placeholder="Ihr Name (optional, für anonyme Anfragen leer lassen)">
                         <div id="name-error" class="form-error" role="alert" aria-live="polite"></div>
                     </div>
                     
                     <!-- E-Mail -->
                     <div class="form-group">
                         <label for="email" class="form-label">
-                            E-Mail-Adresse <span class="required" aria-label="Pflichtfeld">*</span>
+                            E-Mail-Adresse <span class="optional">(optional - nur wenn Sie eine Antwort möchten)</span>
                         </label>
                         <input 
                             type="email" 
                             id="email" 
                             name="email" 
                             class="form-input"
-                            required
-                            aria-required="true"
                             aria-describedby="email-error"
                             autocomplete="email"
                             maxlength="150"
-                            placeholder="ihre.email@beispiel.at">
+                            placeholder="ihre.email@beispiel.at (optional)">
                         <div id="email-error" class="form-error" role="alert" aria-live="polite"></div>
                     </div>
                     
@@ -166,7 +168,7 @@
                             aria-describedby="message-error message-counter"
                             rows="8"
                             maxlength="2000"
-                            placeholder="Schreiben Sie hier Ihre Nachricht..."></textarea>
+                            placeholder="Ihre Nachricht, Frage oder IFG-Anfrage..."></textarea>
                         <div class="form-help">
                             <span id="message-counter" class="char-counter" aria-live="polite">0 / 2000 Zeichen</span>
                         </div>
@@ -185,9 +187,9 @@
                                 aria-required="true"
                                 aria-describedby="consent-error">
                             <label for="consent" class="checkbox-label">
-                                Ich stimme der Verarbeitung meiner Daten gemäß der 
-                                <a href="legal/datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu. 
-                                <span class="required" aria-label="Pflichtfeld">*</span>
+                                Ich habe die 
+                                <a href="legal/datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> 
+                                zur Kenntnis genommen. <span class="required" aria-label="Pflichtfeld">*</span>
                             </label>
                         </div>
                         <div id="consent-error" class="form-error" role="alert" aria-live="polite"></div>
@@ -206,12 +208,16 @@
                 
                 <!-- Alternative Kontaktmöglichkeit -->
                 <div class="contact-alternative">
-                    <h3>Alternative Kontaktmöglichkeit</h3>
+                    <h3>Direkte E-Mail</h3>
                     <p>
-                        Sie können uns auch direkt per E-Mail erreichen:<br>
+                        Sie können mir auch direkt per E-Mail schreiben:<br>
                         <a href="mailto:kontakt@transparentesvillach.at" class="email-link">
                             kontakt@transparentesvillach.at
                         </a>
+                    </p>
+                    <p class="text-small text-muted">
+                        <strong>Tipp:</strong> Für anonyme Anfragen können Sie einen temporären E-Mail-Dienst 
+                        wie ProtonMail oder Guerrilla Mail verwenden.
                     </p>
                 </div>
             </div>
@@ -234,8 +240,8 @@
                     <h3>Navigation</h3>
                     <ul class="footer-nav">
                         <li><a href="../index.html">Startseite</a></li>
+                        <li><a href="kontakt.html">Anfragen & Hinweise</a></li>
                         <li><a href="about.html">Über das Projekt</a></li>
-                        <li><a href="kontakt.html">Kontakt</a></li>
                     </ul>
                 </div>
                 
@@ -251,8 +257,7 @@
                 <div class="footer-section">
                     <h3>Kontakt</h3>
                     <p>
-                        E-Mail: <a href="mailto:kontakt@transparentesvillach.at">kontakt@transparentesvillach.at</a><br>
-                        Betreiber: Gernot Oberrauner
+                        <a href="mailto:kontakt@transparentesvillach.at">kontakt@transparentesvillach.at</a>
                     </p>
                 </div>
             </div>
