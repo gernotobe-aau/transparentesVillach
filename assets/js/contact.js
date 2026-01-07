@@ -7,7 +7,6 @@
 // Konstanten
 const FORM_ID = 'contactForm';
 const API_ENDPOINT = 'https://api.web3forms.com/submit';
-const MAX_MESSAGE_LENGTH = 2000;
 const MIN_NAME_LENGTH = 2;
 
 // Validierungsmuster
@@ -260,26 +259,6 @@ function clearAlerts() {
   alertContainer.innerHTML = '';
 }
 
-/**
- * Aktualisiert den Zeichenzähler für die Nachricht
- */
-function updateCharCounter() {
-  const messageField = document.getElementById('message');
-  const counterElement = document.getElementById('message-counter');
-  
-  if (messageField && counterElement) {
-    const currentLength = messageField.value.length;
-    counterElement.textContent = `${currentLength} / ${MAX_MESSAGE_LENGTH} Zeichen`;
-    
-    // Optional: Warnung bei fast erreichtem Limit
-    if (currentLength > MAX_MESSAGE_LENGTH * 0.9) {
-      counterElement.style.color = 'var(--color-error)';
-    } else {
-      counterElement.style.color = 'var(--color-text-muted)';
-    }
-  }
-}
-
 // =============================================================================
 // API-Kommunikation
 // =============================================================================
@@ -344,11 +323,6 @@ function handleInput(event) {
     validateField(field);
   }
   
-  // Zeichenzähler aktualisieren (für Nachricht)
-  if (field.id === 'message') {
-    updateCharCounter();
-  }
-  
   updateSubmitButton();
 }
 
@@ -400,9 +374,6 @@ async function handleSubmit(event) {
         field.setAttribute('aria-invalid', 'false');
       });
       
-      // Zeichenzähler zurücksetzen
-      updateCharCounter();
-      
       // Submit-Button deaktivieren
       updateSubmitButton();
     }
@@ -452,9 +423,6 @@ function init() {
       updateSubmitButton();
     });
   }
-  
-  // Zeichenzähler initialisieren
-  updateCharCounter();
   
   // Submit-Event
   form.addEventListener('submit', handleSubmit);
